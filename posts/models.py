@@ -3,7 +3,8 @@ from django.db import models
 
 class Post(models.Model):
     title = models.CharField(max_length=120)
-    #bookCover =
+    bookCover = models.FileField()
+    # bookCover = models.ImageField(upload_to='static/bookCover', blank=True)
     author = models.CharField(max_length=250)
     authorbio = models.TextField()
     description = models.TextField()

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+    {% load static from staticfiles %}
     <head>
         <meta charset="UTF-8">
         <title>Search Results</title>
@@ -20,8 +21,8 @@
             <div class="thumbnail">
               <!--<img src="..." alt="...">-->
               <div class="caption">
-                <h3><a href='/search/{{ instance.id }}'>{{ instance.title }}</a></h3>
-                    <p><td>Author: </td>
+                <p><h3><a href='/search/{{ instance.id }}'>{{ instance.title }}</a></h3>
+                    <td>Author: </td>
                     {{ instance.author }}<br/>
                     <td>Price: $</td>
                     {{ instance.price }}<br/>
@@ -29,7 +30,8 @@
                     {{ instance.bookrating }}<br/>
                     <td>Release Date</td>
                     {{ instance.releasedate }}<br/></p>
-                <p><a href="#" class="btn btn-primary" role="button">View</a>
+                  <p><a href="/search/{{ instance.id }}" class="btn btn-primary" role="button">View</a></p>
+                  <img src="{{ instance.bookCover.url }}" class="img-responsive" alt="image">
               </div>
             </div>
           </div>
